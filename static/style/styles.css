@@ -1,0 +1,238 @@
+*,
+::after,
+::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+.sidenav {
+    height: 100%;
+    width: 12rem;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    padding-top: 20px;
+}
+
+/* styles for navigation links */
+.sidenav a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff;
+    display: block;
+}
+
+/* Change color in hover */
+.sidenav a:hover {
+    background-color: #ddd;
+    color: #333;
+}
+
+/* Styles for navigation dropdown */
+.dropdown-content {
+    display: none;
+    background-color: #555;
+    padding-left: 20px;
+}
+
+/* styles for navigation dropdown links */
+.dropdown-content a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff;
+    display: block;
+}
+
+/* Change color on dropdown hover */
+.dropdown-content a:hover {
+    background-color: #777;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+#image-logo {
+    width: 10rem;
+    height: 10rem;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    margin-top: 1.8rem;
+}
+
+.circle {
+    background-color: yellow;
+    border-radius: 50%;
+    width: 10rem;
+    height: 10rem;
+    z-index: 3;
+}
+
+/* TOP NAVIGATION BAR */
+
+/* Style the top navigation bar */
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+
+/* Style the search container */
+.search-container {
+    float: left;
+}
+
+/* Style the search input field */
+.search-container input[type=text] {
+    padding: 10px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-size: 17px;
+    border: none;
+}
+
+/* Style the search button */
+.search-container button {
+    float: right;
+    padding: 10px 15px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Float notifications and user information to the right */
+.notifications,
+.user {
+    float: right;
+    padding: 14px 16px;
+}
+
+/* input design */
+.group {
+    position: relative;
+    margin: 1.5rem 0;
+}
+
+.form-wrapper {
+    max-width: 250px;
+    border: 2px solid #333;
+    margin: 2rem auto;
+}
+
+.input {
+    font-size: 16px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 200px;
+    border: none;
+    border-bottom: 1px solid #515151;
+    background: transparent;
+}
+
+.input:focus {
+    outline: none;
+}
+
+label {
+    color: #999;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.input:focus~label,
+.input:valid~label {
+    top: -20px;
+    font-size: 14px;
+    color: #5264AE;
+}
+
+.bar {
+    position: relative;
+    display: block;
+    width: 200px;
+}
+
+.bar:before,
+.bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #5264AE;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.bar:before {
+    left: 50%;
+}
+
+.bar:after {
+    right: 50%;
+}
+
+.input:focus~.bar:before,
+.input:focus~.bar:after {
+    width: 50%;
+}
+
+.highlight {
+    position: absolute;
+    height: 60%;
+    width: 100px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.input:focus~.highlight {
+    animation: inputHighlighter 0.3s ease;
+}
+
+@keyframes inputHighlighter {
+    from {
+        background: #5264AE;
+    }
+
+    to {
+        width: 0;
+        background: transparent;
+    }
+}

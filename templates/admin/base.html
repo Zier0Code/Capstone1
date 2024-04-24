@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/styles.css') }}">
+    <!-- You can add more CSS files here if needed -->
+</head>
+
+<body>
+    <!-- TOP NAVIGATION BAR -->
+    <nav class="topnav" style="margin-left:180px;">
+        <div class="search-container" style="margin-left:20px;">
+            <form action="/search" method="GET">
+                <input type="text" placeholder="Search..." name="q">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        <div class="notifications">
+            <!-- Add notification icons and links here -->A
+        </div>
+        <div class="user">
+            <!-- Add user information and links here -->A
+        </div>
+    </nav>
+
+    <!-- SIDE NAVIGATION BAR -->
+
+    <div class="sidenav">
+        <a href="">
+            <div class="circle">
+
+            </div>
+            <img src="{{ url_for('static', filename='weblogo.svg') }}" alt="orca logo" id="image-logo">
+        </a>
+        <a href="/">Dashboard</a>
+        <div class="dropdown">
+            <a href="#">User Management</a>
+            <div class="dropdown-content">
+                <a href="/admin/create">Create Admin</a>
+                <a href="/admin/view">View Admin</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#">Content</a>
+            <div class="dropdown-content">
+                <a href="/admin/content/admission">Admission</a>
+                <a href="/admin/content/registrar">Registrar</a>
+                <a href="/admin/content/cashier">Cashier</a>
+                <a href="/admin/content/itsupport">IT Support</a>
+            </div>
+        </div>
+        <a href="#contact" id="contact">Conversations</a>
+        <a href="#contact" id="contact">Feedback</a>
+        <a href="#contact" id="contact">Ratings</a>
+        <a href="/logout" id="contact">Logout</a>
+    </div>
+
+    <div style="margin-left: 200px;">
+        <!-- CONTENT AREA -->
+        {% block content %}
+        {% endblock %}
+    </div>
+    <footer>
+        <!-- Your footer content here -->
+    </footer>
+</body>
+
+</html>

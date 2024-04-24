@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orca Admin</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='//styles.css')}}">
+</head>
+
+<body>
+    <h1>Admin Login</h1>
+    <div class='content-form'>
+        <form action="" method="POST">
+            <p>
+                <b> <label for="admin_name"> Admin </label> </b>
+            </p>
+            <p>
+                <input required="text" name="admin_name" placeholder="Admin">
+            </p>
+            <p>
+                <b> <label for="admin_password"> Password</label> </b>
+            </p>
+            <p>
+                <input required="password" name="admin_password" placeholder="Admin">
+            </p>
+            <p>
+                <button type="submit">Submit</button>
+            </p>
+        </form>
+    </div>
+    <hr>
+
+    {{ hi }}
+
+</body>
+
+</html>

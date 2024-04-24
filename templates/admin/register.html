@@ -1,0 +1,38 @@
+{% extends 'admin/base.html' %}
+
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block content %}
+<h1>Create Admin</h1>
+<div class="form-wrapper">
+    <form action="/admin/create" method="POST" id="form-data">
+        <div class="group">
+            <input required="" type="text" autocomplete="off" autofocus name="admin_username" class="input">
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>user name</label>
+        </div>
+        <div class="group">
+            <input required="" type="email" autocomplete="off" autofocus name="admin_register" class="input">
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>admin email</label>
+        </div>
+        <div class="group">
+            <input required="" type="password" name="password_register" class="input">
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>password</label>
+        </div>
+
+        <select name="admin_type" id="">
+            <option selected disabled>-- SELECT TYPE --</option>
+            {% for type in admin_type %}
+            <option value="{{ type }}">{{type}}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Register</button>
+    </form>
+</div>
+
+{% endblock %}
